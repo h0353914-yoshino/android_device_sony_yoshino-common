@@ -223,6 +223,10 @@ PRODUCT_PACKAGES += \
     PresencePolling \
     RcsService
 
+# secd: needs Android 13 BoringSSL (HMAC_CTX size changed)
+PRODUCT_PACKAGES += \
+    libcrypto-v33
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl:64 \

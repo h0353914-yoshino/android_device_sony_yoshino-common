@@ -82,6 +82,8 @@ TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone4/temp
 
 ## /DATA/MEDIA SUPPORT
 RECOVERY_SDCARD_ON_DATA := true
+# Unbind /sdcard (stacked data/media bind) before formatting /data
+OF_UNBIND_SDCARD_F2FS := 1
 
 ## ENCRYPTION
 BOARD_USES_QCOM_FBE_DECRYPTION := true

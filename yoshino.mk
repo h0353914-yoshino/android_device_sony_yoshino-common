@@ -134,10 +134,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # OMX
+# TEMP: libOmxVdec、libOmxVenc 暫時移除（4.19 vidc_3x 介面不同），見 代辦事項.md
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libOmxVdec \
-    libOmxVenc \
     libstagefrighthw
 
 # Partitions

@@ -55,8 +55,8 @@ BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 loop.max_part=7
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_VERSION := 4.4
-TARGET_KERNEL_CONFIG += msmcortex-perf_defconfig sony/yoshino.config
+TARGET_KERNEL_VERSION := 4.19
+TARGET_KERNEL_CONFIG += vendor/msm8998-perf_defconfig sony/yoshino.config
 TARGET_KERNEL_SOURCE := kernel/sony/msm8998
 
 # Partitions
@@ -112,6 +112,10 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+# qcacld is built into the kernel and starts only when "ON" is written to /dev/wlan
+WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wlan"
+WIFI_DRIVER_STATE_ON := "ON"
+WIFI_DRIVER_STATE_OFF := "OFF"
 
 # Inherit from the proprietary version
 include vendor/sony/yoshino-common/BoardConfigVendor.mk

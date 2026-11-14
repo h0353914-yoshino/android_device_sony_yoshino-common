@@ -615,15 +615,13 @@ vendor/firmware/a540_zap.mdt
 # Graphics (HDR) - from mermaid - 53.1.A.3.105
 vendor/lib64/libhdr_tm.so|ac4c943ba0c9793e53fc0b4eecf78ebb90eb28bf
 
-# Graphics (SDM) - from mermaid - 53.1.A.3.105 
-vendor/lib64/libqseed3.so|6779aaf96283e244122f4cc76cd3cb750ff14ed5
-vendor/lib64/libsdm-color.so|9bfc08c837db828cbc6a80c9c15c87bfdb62b90c
-vendor/lib64/libsdm-diag.so|db4c495e3e64ea0cbc0d079a2aa16862a9b02192
-vendor/lib64/libsdm-disp-vndapis.so|92fe3602eaaae1847965e8886d2cbef3d0a801f8
-vendor/lib64/libsdmcore.so|a388e9c7b810f771f7067ca763e00ad27dd3db79
-vendor/lib64/libsdmextension.so|e8ce23da479c3438f98d6792c367423af92b5dfc
-vendor/lib64/libsdmutils.so|c071995e8b7e24b3c3e4c111969b86d092a17c6f
-vendor/lib64/libtinyxml2_1.so|70942325afdd14eedcf11b3fbbfbc3d98f42f8dc
+# Graphics (SDM) - from  CAT S62 Pro Android 11
+vendor/lib64/libqseed3.so|a858c83fb38ef7acd21ea0a23f36ef22ba8c06ef
+vendor/lib64/libsdm-color.so|69cea5fdff6c3ef05a17390b9031d9e0054bc2ad|74057c3780a76cdb8199cdb5ec3ed31ecd38341b
+vendor/lib64/libsdm-diag.so|2ba98c20d05e34501a4423f55bec4da3f27711ad
+vendor/lib64/libsdm-disp-vndapis.so|80170ba42ef766a8217500e49c4943be91cf0749
+vendor/lib64/libsdmextension.so|2d7469450bfaadb304a8080e384f72601442d078
+vendor/lib64/libtinyxml2_1.so|ff32deb110acb02cb5def5f3404f9064c1276483
 
 # Graphics (Vulkan)
 vendor/lib64/hw/vulkan.msm8998.so|5f1f6703644a6e36e4c48d70e8e875e55b6c2ddb

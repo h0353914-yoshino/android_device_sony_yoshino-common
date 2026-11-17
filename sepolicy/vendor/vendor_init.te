@@ -21,6 +21,9 @@ set_prop(vendor_init, media_config_prop)
 set_prop(vendor_init, vendor_video_prop)
 set_prop(vendor_init, audio_prop)
 
+allow vendor_init proc_vendor_sched:dir search;
+allow vendor_init proc_vendor_sched:file w_file_perms;
+
 # Allow vendor_init to start the memlat governor, which creates
 # per-CPU kernel perf counters in the writer's context
 allow vendor_init self:perf_event cpu;

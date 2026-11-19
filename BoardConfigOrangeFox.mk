@@ -88,3 +88,9 @@ RECOVERY_BINARY_SOURCE_FILES += \
 TARGET_KERNEL_CLANG_VERSION := r522817
 # 4.19 legacy Qualcomm driver 對較新 Clang 的 packed-member 診斷不應阻擋建置
 TARGET_KERNEL_ADDITIONAL_FLAGS += KCFLAGS=-Wno-error=address-of-packed-member
+
+# poplar 使用已驗證的 recovery fstab，保留其他機型的分割區設定
+ifeq ($(TARGET_DEVICE),poplar)
+# 裝置 BoardConfig 在 include 後仍有賦值，使用 override 確保採用此版本
+override TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/recovery.fstab
+endif

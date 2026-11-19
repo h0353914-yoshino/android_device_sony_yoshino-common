@@ -1,4 +1,7 @@
 on boot
+    # OrangeFox 儲存空間選單使用的 SD 卡路徑別名
+    symlink /storage/sdcard1 /external_sd
+
     mkdir /config 0770 shell shell
     mount configfs none /config
 

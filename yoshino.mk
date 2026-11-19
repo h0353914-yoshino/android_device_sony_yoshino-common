@@ -51,12 +51,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl:32
 
-# Configstore
-PRODUCT_PACKAGES += \
-    disable_configstore
-
-# Cgroup and task profiles: use the system files, the legacy _28 ones mount schedtune
-
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 

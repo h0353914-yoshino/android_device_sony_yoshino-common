@@ -1,6 +1,10 @@
 # Yoshino 系列的 OrangeFox recovery 共用板級設定
 COMMON_PATH := device/sony/yoshino-common
 
+# yoshino 是非 A/B 裝置；不設的話 build/make 會預設為 true，使 recovery 啟用
+# A/B 專用的「安裝 ROM 後自動重刷 OrangeFox」流程，把 recovery ramdisk 打進 boot
+AB_OTA_UPDATER := false
+
 # 平台與架構
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msm8998
@@ -94,3 +98,12 @@ ifeq ($(TARGET_DEVICE),poplar)
 # 裝置 BoardConfig 在 include 後仍有賦值，使用 override 確保採用此版本
 override TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/recovery.fstab
 endif
+
+# recovery 仍連結 boot HAL 函式庫（AB_OTA_UPDATER := false 時 ramdisk 不會自動帶入），改用官方清單補進 ramdisk
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.boot@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.boot@1.1.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.boot@1.2.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.boot-V1-ndk.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libboot_control_client.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libbootloader_message.so
